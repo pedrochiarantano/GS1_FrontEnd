@@ -1,314 +1,166 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Global Solution - Future Network</title>
-  
-</head>
-<body>
-
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Pro.net</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
     <header class="site-header">
-    <div class="container header-inner">
-        <h1 class="logo">Rede Profissional</h1>
-
+      <div class="container header-inner">
+        <h1 class="logo">Pro.net</h1>
         <nav>
-        <ul class="nav-list">
+          <ul class="nav-list">
             <li><a href="#professionals">Profissionais</a></li>
             <li><a href="#quiz">Quiz</a></li>
             <li><a href="#about">Sobre</a></li>
-        </ul>
+          </ul>
         </nav>
-    </div>
+      </div>
     </header>
 
+    <main>
+      <section id="hero" class="hero">
+        <div class="container hero-inner">
+          <h2>O Futuro do Trabalho</h2>
+          <p>
+            Conectando pessoas, competências e propósito através da tecnologia.
+          </p>
+        </div>
+      </section>
 
-  <main>
-    <section id="hero" class="hero">
-    <div class="container hero-inner">
-        <h2>O Futuro do Trabalho</h2>
-        <p>Conectando pessoas, competências e propósito através da tecnologia.</p>
-    </div>
-    </section>
+      <!-- SEÇÃO DE PROFISSIONAIS COM CARDS -->
+      <section id="professionals" class="professionals-section">
+        <div class="container">
+          <h2>Profissionais Destacados</h2>
+          <div class="cards-grid" id="cardsContainer">
+            <!-- Cards serão gerados por JavaScript -->
+          </div>
+        </div>
+      </section>
 
-    <section id="professionals" class="container">
-    <h2>Profissionais</h2>
+      <!-- SEÇÃO SLIDESHOW DETALHADO -->
+      <section id="slideshow-section" class="slideshow-section hidden">
+        <div class="container">
+          <button class="btn-back" onclick="backToCards()">← Voltar</button>
+          <div class="slideshow-container">
+            <div class="slideshow-wrapper">
+              <!-- Slide 1: Info Pessoal -->
+              <div class="slide slide-active">
+                <div class="slide-content">
+                  <img
+                    id="slideAvatar"
+                    src=""
+                    alt="Profissional"
+                    class="slide-avatar"
+                  />
+                  <div class="slide-info">
+                    <h2 id="slideName"></h2>
+                    <p id="slideRole" class="slide-role"></p>
+                    <p id="slideLocation"></p>
+                    <div class="slide-details">
+                      <p>
+                        <strong>Anos de Experiência:</strong>
+                        <span id="slideExperience"></span>
+                      </p>
+                      <p>
+                        <strong>Formação:</strong>
+                        <span id="slideEducation"></span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
-    <div class="cards-grid">
+              <!-- Slide 2: Habilidades Técnicas -->
+              <div class="slide">
+                <div class="slide-content centered">
+                  <h2>Habilidades Técnicas</h2>
+                  <div class="skills-container" id="technicalSkills"></div>
+                </div>
+              </div>
 
-        <!-- CARD 1 -->
-        <article class="card">
-        <img src="assets/avatars/avatar1.png" class="avatar">
-        <h3>Mariana Souza</h3>
-        <p class="role">Designer de Produto</p>
-        </article>
-
-        <!-- CARD 2 -->
-        <article class="card">
-        <img src="assets/avatars/avatar2.png" class="avatar">
-        <h3>Lucas Pereira</h3>
-        <p class="role">Desenvolvedor Front-End</p>
-        </article>
-
-        <!-- CARD 3 -->
-        <article class="card">
-        <img src="assets/avatars/avatar3.png" class="avatar">
-        <h3>Ana Ribeiro</h3>
-        <p class="role">Analista de Dados</p>
-        </article>
-
-        <!-- CARD 4 -->
-        <article class="card">
-        <img src="assets/avatars/avatar4.png" class="avatar">
-        <h3>Bruno Lima</h3>
-        <p class="role">Engenheiro de Cloud</p>
-        </article>
-
-        <!-- CARD 5 -->
-        <article class="card">
-        <img src="assets/avatars/avatar5.png" class="avatar">
-        <h3>Carolina Alves</h3>
-        <p class="role">Analista de Cibersegurança</p>
-        </article>
-
-        <!-- CARD 6 -->
-        <article class="card">
-        <img src="assets/avatars/avatar6.png" class="avatar">
-        <h3>Diego Costa</h3>
-        <p class="role">Desenvolvedor Back-End</p>
-        </article>
-
-        <!-- CARD 7 -->
-        <article class="card">
-        <img src="assets/avatars/avatar7.png" class="avatar">
-        <h3>Elisa Martins</h3>
-        <p class="role">Especialista em RH</p>
-        </article>
-
-        <!-- CARD 8 -->
-        <article class="card">
-        <img src="assets/avatars/avatar8.png" class="avatar">
-        <h3>Felipe Rocha</h3>
-        <p class="role">Desenvolvedor Mobile</p>
-        </article>
-
-        <!-- CARD 9 -->
-        <article class="card">
-        <img src="assets/avatars/avatar9.png" class="avatar">
-        <h3>Gabriela Nunes</h3>
-        <p class="role">Engenheira de QA</p>
-        </article>
-
-        <!-- CARD 10 -->
-        <article class="card">
-        <img src="assets/avatars/avatar10.png" class="avatar">
-        <h3>Hugo Fernandes</h3>
-        <p class="role">Growth Marketer</p>
-        </article>
-
-
-    </div>
-    </section>
-
-    <section id="details" class="container">
-        <h2>Detalhes dos Perfis</h2>
-
-        <!-- PERFIL 1 -->
-        <article id="perfil-1" class="profile-detail">
-            <a href="#professionals">← Voltar</a>
-            <div class="detail-inner">
-            <img src="assets/avatars/avatar1.png" class="detail-avatar">
-            <div>
-                <h3>Mariana Souza</h3>
-                <p><strong>Cargo:</strong> Designer de Produto</p>
-                <p><strong>Localização:</strong> São Paulo - SP</p>
-                <p><strong>Experiências Profissionais:</strong> 3 anos</p>
-                <p><strong>Habilidades técnicas:</strong> UX, Figma, Prototipação</p>
-                <p><strong>Soft Skills:</strong> Comunicação, Empatia</p>
-                <p><strong>Hobbies:</strong> Fotografia, Café</p>
+              <!-- Slide 3: Soft Skills e Hobbies -->
+              <div class="slide">
+                <div class="slide-content centered">
+                  <h2>Soft Skills & Hobbies</h2>
+                  <div class="skills-container" id="softSkills"></div>
+                  <h3>Hobbies</h3>
+                  <div class="hobbies-container" id="hobbies"></div>
+                </div>
+              </div>
             </div>
-            </div>
-        </article>
 
-        <!-- PERFIL 2 -->
-        <article id="perfil-2" class="profile-detail">
-            <a href="#professionals">← Voltar</a>
-            <div class="detail-inner">
-            <img src="assets/avatars/avatar2.png" class="detail-avatar">
-            <div>
-                <h3>Lucas Pereira</h3>
-                <p><strong>Cargo:</strong> Desenvolvedor Front-End</p>
-                <p><strong>Localização:</strong> Campinas - SP</p>
-                <p><strong>Experiências Profissionais:</strong> 2 anos</p>
-                <p><strong>Habilidades técnicas:</strong> HTML, CSS, JavaScript</p>
-                <p><strong>Soft Skills:</strong> Responsabilidade, Trabalho em equipe</p>
-                <p><strong>Hobbies:</strong> Corrida, Jogos</p>
+            <!-- Controles do Slideshow -->
+            <div class="slideshow-controls">
+              <button class="slide-nav prev" onclick="previousSlide()">
+                ❮
+              </button>
+              <div class="slide-indicators" id="slideIndicators"></div>
+              <button class="slide-nav next" onclick="nextSlide()">❯</button>
             </div>
-            </div>
-        </article>
 
-        <!-- PERFIL 3 -->
-        <article id="perfil-3" class="profile-detail">
-            <a href="#professionals">← Voltar</a>
-            <div class="detail-inner">
-            <img src="assets/avatars/avatar3.png" class="detail-avatar">
-            <div>
-                <h3>Ana Ribeiro</h3>
-                <p><strong>Cargo:</strong> Analista de Dados</p>
-                <p><strong>Localização:</strong> Rio de Janeiro - RJ</p>
-                <p><strong>Experiências Profissionais:</strong> 1 ano</p>
-                <p><strong>Habilidades técnicas:</strong> SQL, Power BI, Python</p>
-                <p><strong>Soft Skills:</strong> Pensamento crítico</p>
-                <p><strong>Hobbies:</strong> Leitura</p>
+            <!-- Botões de Ação -->
+            <div class="action-buttons">
+              <button class="btn btn-recommend">Recomendar Profissional</button>
+              <button class="btn btn-message">Enviar Mensagem</button>
             </div>
-            </div>
-        </article>
+          </div>
+        </div>
+      </section>
 
-        <!-- PERFIL 4 -->
-        <article id="perfil-4" class="profile-detail">
-            <a href="#professionals">← Voltar</a>
-            <div class="detail-inner">
-            <img src="assets/avatars/avatar4.png" class="detail-avatar">
-            <div>
-                <h3>Bruno Lima</h3>
-                <p><strong>Cargo:</strong> Engenheiro de Cloud</p>
-                <p><strong>Localização:</strong> Belo Horizonte - MG</p>
-                <p><strong>Experiências Profissionais:</strong> 4 anos</p>
-                <p><strong>Habilidades técnicas:</strong> Azure, Docker, Infraestrutura como Código</p>
-                <p><strong>Soft Skills:</strong> Organização</p>
-                <p><strong>Hobbies:</strong> Mountain bike</p>
-            </div>
-            </div>
-        </article>
+      <!-- SEÇÃO QUIZ -->
+      <section id="quiz" class="quiz-section">
+        <div class="container">
+          <h2>Quiz</h2>
+          <p class="quiz-description">
+            Teste seus conhecimentos sobre o mercado de trabalho
+          </p>
 
-        <!-- PERFIL 5 -->
-        <article id="perfil-5" class="profile-detail">
-            <a href="#professionals">← Voltar</a>
-            <div class="detail-inner">
-            <img src="assets/avatars/avatar5.png" class="detail-avatar">
-            <div>
-                <h3>Carolina Alves</h3>
-                <p><strong>Cargo:</strong> Analista de Cibersegurança</p>
-                <p><strong>Localização:</strong> Porto Alegre - RS</p>
-                <p><strong>Experiências Profissionais:</strong> 2 anos</p>
-                <p><strong>Habilidades técnicas:</strong> SIEM, Pentest, Forense</p>
-                <p><strong>Soft Skills:</strong> Detalhismo</p>
-                <p><strong>Hobbies:</strong> Quebra-cabeças</p>
-            </div>
-            </div>
-        </article>
+          <div class="quiz-filters">
+            <button class="filter-btn active" onclick="filterQuiz('all')">
+              Todos
+            </button>
+            <button class="filter-btn" onclick="filterQuiz('area')">
+              Por Área
+            </button>
+            <button class="filter-btn" onclick="filterQuiz('city')">
+              Por Cidade
+            </button>
+            <button class="filter-btn" onclick="filterQuiz('technology')">
+              Por Tecnologia
+            </button>
+          </div>
 
-        <!-- PERFIL 6 -->
-        <article id="perfil-6" class="profile-detail">
-            <a href="#professionals">← Voltar</a>
-            <div class="detail-inner">
-            <img src="assets/avatars/avatar6.png" class="detail-avatar">
-            <div>
-                <h3>Diego Costa</h3>
-                <p><strong>Cargo:</strong> Desenvolvedor Back-End</p>
-                <p><strong>Localização:</strong> Curitiba - PR</p>
-                <p><strong>Experiências Profissionais:</strong> 3 anos</p>
-                <p><strong>Habilidades técnicas:</strong> Node.js, Bancos de Dados, API REST</p>
-                <p><strong>Soft Skills:</strong> Resiliência</p>
-                <p><strong>Hobbies:</strong> Culinária</p>
-            </div>
-            </div>
-        </article>
+          <form class="quiz-form" id="quizForm" onsubmit="submitQuiz(event)">
+            <div class="questions-container" id="questionsContainer"></div>
+            <button type="submit" class="btn btn-submit">
+              Enviar Respostas
+            </button>
+          </form>
 
-        <!-- PERFIL 7 -->
-        <article id="perfil-7" class="profile-detail">
-            <a href="#professionals">← Voltar</a>
-            <div class="detail-inner">
-            <img src="assets/avatars/avatar7.png" class="detail-avatar">
-            <div>
-                <h3>Elisa Martins</h3>
-                <p><strong>Cargo:</strong> Especialista em Recursos Humanos</p>
-                <p><strong>Localização:</strong> Fortaleza - CE</p>
-                <p><strong>Experiências Profissionais:</strong> 3 anos</p>
-                <p><strong>Habilidades técnicas:</strong> Recrutamento, People Ops</p>
-                <p><strong>Soft Skills:</strong> Empatia</p>
-                <p><strong>Hobbies:</strong> Yoga</p>
-            </div>
-            </div>
-        </article>
+          <div id="quizResult" class="quiz-result hidden">
+            <h3>Resultado do Quiz</h3>
+            <p id="resultMessage"></p>
+          </div>
+        </div>
+      </section>
 
-        <!-- PERFIL 8 -->
-        <article id="perfil-8" class="profile-detail">
-            <a href="#professionals">← Voltar</a>
-            <div class="detail-inner">
-            <img src="assets/avatars/avatar8.png" class="detail-avatar">
-            <div>
-                <h3>Felipe Rocha</h3>
-                <p><strong>Cargo:</strong> Desenvolvedor Mobile</p>
-                <p><strong>Localização:</strong> Manaus - AM</p>
-                <p><strong>Experiências Profissionais:</strong> 2 anos</p>
-                <p><strong>Habilidades técnicas:</strong> Flutter, UI Mobile</p>
-                <p><strong>Soft Skills:</strong> Criatividade</p>
-                <p><strong>Hobbies:</strong> Música</p>
-            </div>
-            </div>
-        </article>
+      <section id="about" class="container">
+        <h2>Sobre</h2>
+        <p>
+          Uma plataforma moderna de conexão profissional baseada em competências
+          e propósito.
+        </p>
+      </section>
+    </main>
 
-        <!-- PERFIL 9 -->
-        <article id="perfil-9" class="profile-detail">
-            <a href="#professionals">← Voltar</a>
-            <div class="detail-inner">
-            <img src="assets/avatars/avatar9.png" class="detail-avatar">
-            <div>
-                <h3>Gabriela Nunes</h3>
-                <p><strong>Cargo:</strong> Engenheira de Garantia de Qualidade</p>
-                <p><strong>Localização:</strong> Recife - PE</p>
-                <p><strong>Experiências Profissionais:</strong> 1 ano</p>
-                <p><strong>Habilidades técnicas:</strong> Testes Automatizados, Selenium</p>
-                <p><strong>Soft Skills:</strong> Curiosidade</p>
-                <p><strong>Hobbies:</strong> Escalada</p>
-            </div>
-            </div>
-        </article>
+    <footer class="site-footer">
+      <p>&copy; 2025 Pro.net. Todos os direitos reservados.</p>
+    </footer>
 
-        <!-- PERFIL 10 -->
-        <article id="perfil-10" class="profile-detail">
-            <a href="#professionals">← Voltar</a>
-            <div class="detail-inner">
-            <img src="assets/avatars/avatar10.png" class="detail-avatar">
-            <div>
-                <h3>Hugo Fernandes</h3>
-                <p><strong>Cargo:</strong> Growth Marketer</p>
-                <p><strong>Localização:</strong> Salvador - BA</p>
-                <p><strong>Experiências Profissionais:</strong> 3 anos</p>
-                <p><strong>Habilidades técnicas:</strong> SEO, Analytics</p>
-                <p><strong>Soft Skills:</strong> Comunicação</p>
-                <p><strong>Hobbies:</strong> Surf</p>
-            </div>
-            </div>
-        </article>
-
-        </section>
-
-    <section id="quiz" class="container">
-        <h2>Quiz — Mercado de Trabalho</h2>
-
-        <form class="quiz-form">
-            <fieldset>
-            <legend>1) Qual habilidade é essencial para um Desenvolvedor Front-End?</legend>
-            <label><input type="radio" name="q1"> HTML & CSS</label>
-            <label><input type="radio" name="q1"> Illustrator</label>
-            </fieldset>
-
-            <fieldset>
-            <legend>2) A tecnologia Azure é usada principalmente em qual área?</legend>
-            <label><input type="radio" name="q2"> Computação em Nuvem</label>
-            <label><input type="radio" name="q2"> Marketing</label>
-            </fieldset>
-
-            <button class="btn">Enviar</button>
-        </form>
-    </section>
-
-    <section id="about"></section>
-  </main>
-
-  <footer></footer>
-
-</body>
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+  </body>
 </html>
